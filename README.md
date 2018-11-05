@@ -30,3 +30,12 @@ I would like to list my property.
 - Copy full path of SpecRunner.html
 - Paste full into webbrowser
 - OR run in command line: `open SpecRunner.html`
+
+=======
+### Dev team
+
+[Felix Dalby-Bowler](https://github.com/felixjtdb)
+[Shannon Gamby](https://github.com/shannongamby)
+[Imtiyaz Zaman](https://github.com/imtiyazzaman1)
+[Raylene Smith](https://github.com/rsmith88)
+[Chloe Verity](https://github.com/chloeverity)
