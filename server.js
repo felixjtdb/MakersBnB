@@ -6,7 +6,7 @@ const HOST = "127.0.0.1"
 app.set("view engine", "ejs");
 
 app.get('/', (req, res) => {
-  res.reder("../views/index", {});
+  res.reder("./views/index", {});
   res.end()
 });
 
