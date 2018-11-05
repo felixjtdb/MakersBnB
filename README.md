@@ -35,13 +35,13 @@ I would like to list my property.
 1. Install PostgreSQL
 2. To start `psql` type the command `psql postgres` into your terminal
 3. Create the database using the `psql` command `CREATE DATABASE makersbnb;`
-4. Connect to the database using the `pqsl` command `\c makrsbnb;`
+4. Connect to the database using the `pqsl` command `\c makersbnb;`
 5. Run the queries in the files: `01_create_users_table.sql` and `02_create_property_table.sql`
 
 ## SetUp Test Database
 1. To start `psql` type the command `psql postgres` into your terminal
 2. Create the database using the `psql` command `CREATE DATABASE makersbnb_test;`
-3. Connect to the database using the `pqsl` command `\c makrsbnb;`
+3. Connect to the database using the `pqsl` command `\c makersbnb;`
 4. Run the queries in the files: `01_create_users_table.sql` and `02_create_property_table.sql`
 
 =======
