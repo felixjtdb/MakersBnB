@@ -6,12 +6,12 @@ const HOST = "127.0.0.1"
 app.set("view engine", "ejs");
 
 app.get('/', (req, res) => {
-  res.reder("../views/index", {});
+  res.render("index", {});
   res.end()
 });
 
 app.get('/signup', (req, res) => {
-  res.render("./views/sign_up", {});
+  res.render("sign_up", {});
   res.end()
 });
 
