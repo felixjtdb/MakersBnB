@@ -31,6 +31,19 @@ I would like to list my property.
 - Paste full into webbrowser
 - OR run in command line: `open SpecRunner.html`
 
+##SetUp Database
+1. Install PostgreSQL
+2. To start `psql` type the command `psql postgres` into your terminal
+3. Create the database using the `psql` command `CREATE DATABASE makersbnb;`
+4. Connect to the database using the `pqsl` command `\c makrsbnb;`
+5. Run the queries in the files: `01_create_users_table.sql` and `02_create_property_table.sql`
+
+##SetUp Test Database
+- To start `psql` type the command `psql postgres` into your terminal
+- Create the database using the `psql` command `CREATE DATABASE makersbnb_test;`
+- Connect to the database using the `pqsl` command `\c makrsbnb;`
+- Run the queries in the files: `01_create_users_table.sql` and `02_create_property_table.sql`
+
 =======
 ### Dev team
 

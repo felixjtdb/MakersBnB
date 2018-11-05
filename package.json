@@ -24,6 +24,11 @@
     "eslint": "^5.8.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jasmine": "^2.10.1"
+    "eslint-plugin-jasmine": "^2.10.1",
+    "grunt": "^1.0.3"
+  },
+  "dependencies": {
+    "node-pg-migrate": "^3.13.0",
+    "pg": "^7.6.0"
   }
 }
