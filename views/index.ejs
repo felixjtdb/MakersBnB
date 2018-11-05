@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+  <title>MakersBnB</title>
+</head>
+<body>
+  <h1> Welcome to MakersBnb! </h1>
+
+  <% if @user.nil? %>
+<form action="/sign_up" method="get">
+    <input type="submit" value="Sign Up">
+</form>
+<% end %>
+
+<% if !@user.nil? %>
+<form action="/listing/new" method="get">
+    <input type="submit" value="List a Property">
+</form>
+<% end %>
+
+<div><%= flash[:notice] %></div>
+
+<% if @user.nil? %>
+  <form action="/log_in" method="get">
+      <input type="submit" value="Log In">
+  </form>
+<% else %>
+  <form action = '/log_out' method = 'post'>
+      <input type='hidden' id='hidden' name='_method' value='delete'>
+      <input type="submit" value="Log Out">
+  </form>
+  <h4>Logged in as <%= @username %></h4>
+    <form action="/<%= @username %>" method="get">
+        <input type="submit" value="My profile">
+    </form>
+<% end %>
+</body>
