@@ -3,6 +3,8 @@ const app = express()
 const PORT = "8080"
 const HOST = "127.0.0.1"
 
+var User = require('./models/user')
+
 app.set("view engine", "ejs");
 
 app.get('/', (req, res) => {
@@ -16,6 +18,15 @@ app.get('/signup', (req, res) => {
 app.get('/login', (req, res) => {
   res.render("log_in", {});
 });
+
+app.post('/login', (req, res) => {
+  console.log('params');
+  console.log(req.params);
+  User.fetchAll()
+  .then(function (users) {
+    res.json({users})
+  })
+})
 
 app.listen(PORT, () => {
   console.log("server up")
