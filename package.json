@@ -25,12 +25,14 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jasmine": "^2.10.1",
-    "grunt": "^1.0.3"
+    "grunt": "^1.0.3",
+    "jasmine-node": "^1.16.2"
   },
   "dependencies": {
     "node-pg-migrate": "^3.13.0",
     "pg": "^7.6.0",
     "ejs": "^2.6.1",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "zombie": "^6.1.3"
   }
 }
