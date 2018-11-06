@@ -1,5 +1,5 @@
 {
-  "name": "MakersBnB",
+  "name": "makersbnb",
   "version": "1.0.0",
   "description": "## User Stories ``` As a user, So that I can use the website, I would like to be able to sign up.",
   "main": "jquery-3.3.1.js",
@@ -7,14 +7,15 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/felixjtdb/MakersBnB.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ray Smith",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/felixjtdb/MakersBnB/issues"
@@ -26,7 +27,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jasmine": "^2.10.1",
     "grunt": "^1.0.3",
-    "jasmine-node": "^1.16.2"
+    "jasmine-node": "^2.0.1"
   },
   "dependencies": {
     "node-pg-migrate": "^3.13.0",

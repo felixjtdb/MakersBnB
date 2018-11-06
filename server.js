@@ -13,6 +13,10 @@ app.get('/signup', (req, res) => {
   res.render("sign_up", {});
 });
 
+app.get('/login', (req, res) => {
+  res.render("log_in", {});
+});
+
 app.listen(PORT, () => {
   console.log("server up")
 });

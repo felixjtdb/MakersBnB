@@ -33,4 +33,11 @@ describe("User can leave homepage", function() {
        });
       browser.assert.text("h2", "Sign up to start Listing on MakersBnB");
    });
+
+   it("has a functioning log in button", function() {
+       return browser.pressButton('Log In', function(browser) {
+       });
+      browser.assert.text("h2", "Log In to start Listing on MakersBnB");
+   });
+
 });
