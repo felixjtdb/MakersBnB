@@ -7,12 +7,10 @@ app.set("view engine", "ejs");
 
 app.get('/', (req, res) => {
   res.render("index", {});
-  res.end()
 });
 
 app.get('/signup', (req, res) => {
   res.render("sign_up", {});
-  res.end()
 });
 
 app.listen(PORT, () => {
