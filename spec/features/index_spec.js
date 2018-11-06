@@ -15,7 +15,7 @@ describe("User can visit homepage", function() {
    });
 
    it("should show homepage", function() {
-     browser.assert.text("h1", "Welcome to Makers BnB!")
+     browser.assert.text("h3", "Welcome to Makers BnB!")
    });
 });
 
@@ -29,15 +29,22 @@ describe("User can leave homepage", function() {
   });
 
    it("has a functioning sign up button", function() {
-       return browser.pressButton('Sign Up', function(browser) {
+       return browser.clickLink("#nav-link-signup", function(browser) {
        });
-      browser.assert.text("h2", "Sign up to start Listing on MakersBnB");
+      browser.assert.text("h3", "Sign up to start Listing on MakersBnB");
    });
 
    it("has a functioning log in button", function() {
-       return browser.pressButton('Log In', function(browser) {
+       return browser.clickLink("#nav-link-login", function(browser) {
        });
-      browser.assert.text("h2", "Log In to start Listing on MakersBnB");
+      browser.assert.text("h3", "Log In to start Listing on MakersBnB");
    });
+
+   // THIS IS TEMPLATE FOR CLICKING BUTTON
+   // it("has a functioning log in button", function() {
+   //     return browser.pressButton('Log In', function(browser) {
+   //     });
+   //    browser.assert.text("h2", "Log In to start Listing on MakersBnB");
+   // });
 
 });
