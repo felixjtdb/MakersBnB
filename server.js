@@ -1,5 +1,10 @@
 const express = require("express")
 const app = express()
+
+const bodyParser = require('body-parser')
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
+
 const PORT = "8080"
 const HOST = "127.0.0.1"
 
@@ -21,9 +26,14 @@ app.get('/login', (req, res) => {
 
 app.post('/login', (req, res) => {
   console.log('params');
-  console.log(req.params);
-  User.fetchAll()
-  .then(function (users) {
+  console.log(req.body);
+  User
+    .where({
+      'username': req.body.username,
+      'password': req.body.password
+    })
+    .fetchAll()
+    .then(function (users) {
     res.json({users})
   })
 })
