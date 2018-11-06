@@ -1,22 +1,62 @@
-<body>
-  <h2>Sign up to start Listing on MakersBnB</h2>
-<form class="sign-up" action="/sign_up" method="post">
-  <label for="name">
-    Name
-    <input type="text" name="name">
-  </label>
-  <label for="username">
-    Username
-    <input type="text" name="username">
-  </label> <br>
-  <label for="emailaddress">
-    Email Address
-    <input type="text" name="email">
-  </label>
-  <label for="password">
-    Password
-    <input type="text" name="password">
-  </label>
-  <button class="sign-up-button" type="submit" name="Sign Up">Sign Me Up</button>
-</form>
-</body>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #FE5D60;">
+
+      <a class="navbar-brand" href="/">MakersBnB</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" id="nav-link-signup" href="/signup">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-link-login" href="/login">Log In</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+    <br>
+    <h3>Sign up to start Listing on MakersBnB</h3>
+    <form class="sign-up" action="/sign_up" method="post">
+      <label for="name">
+        Name
+        <input type="text" name="name">
+      </label>
+      <br>
+      <label for="username">
+        Username
+        <input type="text" name="username">
+      </label>
+      <br>
+      <label for="emailaddress">
+        Email Address
+        <input type="text" name="email">
+      </label>
+      <br>
+      <label for="password">
+        Password
+        <input type="text" name="password">
+      </label>
+      <br>
+      <button class="sign-up-button" type="submit" name="Sign Up">Sign Me Up</button>
+    </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  </body>
+</html>
