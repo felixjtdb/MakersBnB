@@ -34,16 +34,16 @@ I would like to list my property.
 - OR run in command line: `open SpecRunner.html`
 
 ## Set Up Databases
-`npm install`
-1. Install PostgreSQL
-2. Run `psql postgres`
-3. Run `CREATE DATABASE makers_bnb;`
-4. Run `CREATE DATABASE makers_bnb_test;`
-5. Run `\q`
-6. Run `./node_modules/.bin/knex --knexfile db/knexfile.js migrate:latest --env development`
-7. Run `./node_modules/.bin/knex --knexfile db/knexfile.js migrate:latest --env test`
-8. `./node_modules/.bin/knex seed:run --knexfile db/knexfile.js --env test`
-9. `./node_modules/.bin/knex seed:run --knexfile db/knexfile.js --env development`
+1.`npm install`
+2. Install PostgreSQL
+3. Run `psql postgres`
+4. Run `CREATE DATABASE makers_bnb;`
+5. Run `CREATE DATABASE makers_bnb_test;`
+6. Run `\q`
+7. Run `./node_modules/.bin/knex --knexfile db/knexfile.js migrate:latest --env development`
+8. Run `./node_modules/.bin/knex --knexfile db/knexfile.js migrate:latest --env test`
+9. `./node_modules/.bin/knex seed:run --knexfile db/knexfile.js --env test`
+10. `./node_modules/.bin/knex seed:run --knexfile db/knexfile.js --env development`
 
 =======
 ### Dev team
