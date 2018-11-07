@@ -1,5 +1,5 @@
 'use strict'
-const bookshelf = require('./../bookshelf')
+const bookshelf = require('./../db/bookshelf')
 
 const User = bookshelf.Model.extend({
   tableName: 'users'
