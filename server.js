@@ -32,7 +32,7 @@ app.post('/login', (req, res) => {
       'username': req.body.username,
       'password': req.body.password
     })
-    .fetchAll()
+    .fetch({withRelated: []})
     .then(function (users) {
     res.json({users})
   })
