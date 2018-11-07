@@ -1,5 +1,3 @@
-process.env.NODE_ENV = 'test'
-
 'use strict'
 const bookshelf = require('./../bookshelf')
 
