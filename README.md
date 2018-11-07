@@ -15,7 +15,6 @@ So that I can rent out my property,
 I would like to list my property.
 
 
-
 ```
 
 ## SetUp Environment
@@ -33,6 +32,19 @@ I would like to list my property.
 - Copy full path of SpecRunner.html
 - Paste full into webbrowser
 - OR run in command line: `open SpecRunner.html`
+
+## Set Up Databases
+`npm install`
+1. Install PostgreSQL
+2. Run `psql postgres`
+3. Run `CREATE DATABASE makers_bnb;`
+4. Run `CREATE DATABASE makers_bnb_test;`
+5. Run `\q`
+6. Run `./node_modules/.bin/knex --knexfile db/knexfile.js migrate:latest --env develpoment`
+7. Run `./node_modules/.bin/knex --knexfile db/knexfile.js migrate:latest --env test`
+7. Run `./node_modules/.bin/knex --knexfile db/knexfile.js migrate:latest --env test`
+8. `./node_modules/.bin/knex seed:run --knexfile db/knexfile.js --env test`
+8. `./node_modules/.bin/knex seed:run --knexfile db/knexfile.js --env development`
 
 ## SetUp Database
 1. Install PostgreSQL
