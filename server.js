@@ -10,6 +10,10 @@ const HOST = "127.0.0.1"
 
 var User = require('./models/user')
 
+const bcrypt = require('bcrypt');
+const saltRound = 10;
+
+
 app.set("view engine", "ejs");
 
 app.get('/', (req, res) => {
@@ -19,6 +23,21 @@ app.get('/', (req, res) => {
 app.get('/signup', (req, res) => {
   res.render("sign_up", {});
 });
+
+app.post('/signup', (req, res) => {
+  bcrypt.hash("password", saltRound, function (err, hash) {
+    new User({
+      name: 'Chloe',
+      username: 'chloe123',
+      email: 'chloe@123.com',
+      password: hash
+    }).save()
+    .then(function (user) {
+      res.json({user})
+      res.redirect('/');
+    })
+  });
+})
 
 app.get('/login', (req, res) => {
   res.render("log_in", {});
