@@ -1,22 +1,18 @@
 const express = require("express")
 const session = require('express-session')
 const app = express()
-app.use(session({ secret: 'krunal', resave: false, saveUninitialized: true, }));
-
+const path = require('path')
 const bodyParser = require('body-parser')
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }))
-
-
-
 const PORT = "8080"
 const HOST = "127.0.0.1"
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
 
 var User = require('./models/user')
 
 const bcrypt = require('bcrypt');
 const saltRound = 10;
-
 
 app.set("view engine", "ejs");
 
@@ -28,17 +24,17 @@ app.get('/signup', (req, res) => {
   res.render("sign_up", {});
 });
 
+// This route needs to be tested
 app.post('/signup', (req, res) => {
-  bcrypt.hash("password", saltRound, function (err, hash) {
+  bcrypt.hash(req.body.password, saltRound, function (err, hash) {
     new User({
-      name: 'Chloe',
-      username: 'chloe123',
-      email: 'chloe@123.com',
+      name: req.body.name,
+      username: req.body.username,
+      email: req.body.email,
       password: hash
     }).save()
     .then(function (user) {
       res.json({user})
-      res.redirect('/');
     })
   });
 })
@@ -48,8 +44,6 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login_user', (req, res) => {
-  console.log(req.body);
-  console.log(2);
   User
     .where({
       'username': req.body.username,
