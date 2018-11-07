@@ -1,7 +1,14 @@
 const express = require("express")
 const app = express()
+
+const bodyParser = require('body-parser')
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
+
 const PORT = "8080"
 const HOST = "127.0.0.1"
+
+var User = require('./models/user')
 
 app.set("view engine", "ejs");
 
@@ -16,6 +23,20 @@ app.get('/signup', (req, res) => {
 app.get('/login', (req, res) => {
   res.render("log_in", {});
 });
+
+app.post('/login', (req, res) => {
+  console.log('params');
+  console.log(req.body);
+  User
+    .where({
+      'username': req.body.username,
+      'password': req.body.password
+    })
+    .fetchAll()
+    .then(function (users) {
+    res.json({users})
+  })
+})
 
 app.listen(PORT, () => {
   console.log("server up")
