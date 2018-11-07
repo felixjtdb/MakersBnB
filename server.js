@@ -57,13 +57,8 @@ app.post('/login_user', (req, res) => {
     })
     .fetchAll()
     .then(function (users) {
-      console.log(3);
-      console.log(JSON.stringify(users));
-      req.session.user = users
-      console.log(4);
       res.json({users})
   })
-  res.redirect('/')
 })
 
 app.listen(PORT, () => {
