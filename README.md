@@ -40,7 +40,7 @@ I would like to list my property.
 3. Run `CREATE DATABASE makers_bnb;`
 4. Run `CREATE DATABASE makers_bnb_test;`
 5. Run `\q`
-6. Run `./node_modules/.bin/knex --knexfile db/knexfile.js migrate:latest --env develpoment`
+6. Run `./node_modules/.bin/knex --knexfile db/knexfile.js migrate:latest --env development`
 7. Run `./node_modules/.bin/knex --knexfile db/knexfile.js migrate:latest --env test`
 7. Run `./node_modules/.bin/knex --knexfile db/knexfile.js migrate:latest --env test`
 8. `./node_modules/.bin/knex seed:run --knexfile db/knexfile.js --env test`
