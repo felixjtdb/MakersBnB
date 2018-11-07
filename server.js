@@ -1,9 +1,13 @@
 const express = require("express")
+const session = require('express-session')
 const app = express()
+app.use(session({ secret: 'krunal', resave: false, saveUninitialized: true, }));
 
 const bodyParser = require('body-parser')
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
+
+
 
 const PORT = "8080"
 const HOST = "127.0.0.1"
@@ -43,9 +47,9 @@ app.get('/login', (req, res) => {
   res.render("log_in", {});
 });
 
-app.post('/login', (req, res) => {
-  console.log('params');
+app.post('/login_user', (req, res) => {
   console.log(req.body);
+  console.log(2);
   User
     .where({
       'username': req.body.username,
@@ -53,8 +57,13 @@ app.post('/login', (req, res) => {
     })
     .fetchAll()
     .then(function (users) {
-    res.json({users})
+      console.log(3);
+      console.log(JSON.stringify(users));
+      req.session.user = users
+      console.log(4);
+      res.json({users})
   })
+  res.redirect('/')
 })
 
 app.listen(PORT, () => {
