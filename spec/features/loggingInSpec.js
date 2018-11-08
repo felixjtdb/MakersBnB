@@ -29,4 +29,14 @@ describe('Logging in', function() {
       next()
     })
   });
+
+  it('should throw an error if form filled incorrectly', function(next) {
+  browser.fill("#username", "not_a_user")
+  browser.fill("#password", "lol")
+  browser.clickLink("#login", function (res) {
+    expect(browser.redirected).toBe(false)
+    next()
+  })
+});
+
 });
