@@ -13,9 +13,9 @@ describe('Logging in', function() {
         browser.fill("#username", "t_user")
         browser.fill("#password", "qwerty")
         browser.clickLink("#login", function (res) {
-        browser.clickLink('#nav-link-logout', function (err) {
-        expect(browser.text('h1')).toContain('not logged in!');
-        next()
+          browser.clickLink('#nav-link-logout', function (err) {
+            expect(browser.text('h1')).toContain('not logged in!');
+            next()
         });
       });
     });
