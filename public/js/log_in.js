@@ -15,5 +15,7 @@ function logIn() {
   .then(function (res) {
     sessionStorage.setItem("username", res.users[0].username )
     window.location.href = '/'
+  }).catch(function() {
+    alert("Incorrect username/password")
   })
 }
