@@ -3,7 +3,6 @@ var Browser = require("zombie")
 Browser.localhost("localhost", 8080)
 
 describe('Logging in', function() {
-  console.log(1)
   var browser = new Browser();
   var server = require("../../server.js")
 
