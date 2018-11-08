@@ -6,15 +6,19 @@ describe('Logging in', function() {
   var browser = new Browser();
   var server = require("../../server.js")
 
-  it('should see a form', function(next) {
+  beforeEach(function(next) {
     browser.visit('http://localhost:8080/', function (err) {
       browser.clickLink('#nav-link-login', function (err) {
-        expect(browser.success).toBe(true);
-        expect(browser.fill("#username")).toBeDefined();
-        expect(browser.fill("#password")).toBeDefined();
         next()
       })
     })
+  })
+
+  it('should see a form', function(next) {
+    expect(browser.success).toBe(true);
+    expect(browser.fill("#username")).toBeDefined();
+    expect(browser.fill("#password")).toBeDefined();
+    next()
   });
 
   it('should be able to fill in form', function(next) {
@@ -25,5 +29,4 @@ describe('Logging in', function() {
       next()
     })
   });
-
 });
