@@ -1,8 +1,8 @@
 
 function logIn() {
   var data = {
-    username: 't_user',
-    password: 'qwerty'
+    username: document.querySelector('#username').value,
+    password: document.querySelector('#password').value
   }
   fetch('/login_user', {
     method: 'POST',
@@ -13,7 +13,6 @@ function logIn() {
     return res.json()
   })
   .then(function (res) {
-    // document.getElementById('user').innerHTML = res.users[0].username
     sessionStorage.setItem("username", res.users[0].username )
     window.location.href = '/'
   })

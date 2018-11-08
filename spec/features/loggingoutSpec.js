@@ -2,7 +2,7 @@ var Browser = require("zombie")
 
 Browser.localhost("localhost", 8080)
 
-describe('Logging in', function() {
+describe('Logging out', function() {
   var browser = new Browser();
   var server = require("../../server.js")
 
@@ -13,7 +13,7 @@ describe('Logging in', function() {
         browser.fill("#password", "qwerty")
         browser.clickLink("#login", function (res) {
           browser.clickLink('#nav-link-logout', function (err) {
-            expect(browser.text('h1')).toContain('not logged in!');
+            expect(browser.text('h4')).toContain('not logged in!');
             next()
         });
       });
