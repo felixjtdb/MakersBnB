@@ -48,7 +48,9 @@ app.post('/signup', (req, res) => {
     }).save()
     .then(function (user) {
       res.json({user})
-  });
+  }).catch(function() {
+      res.end()
+  })
 })
 
 app.get('/login', (req, res) => {

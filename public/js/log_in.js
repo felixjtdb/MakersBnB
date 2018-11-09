@@ -9,7 +9,6 @@ function logIn(data) {
     return res.json()
   })
   .then(function (res) {
-
     sessionStorage.setItem("username", res.users[0].username )
     window.location.href = '/'
   }).catch(function() {
@@ -27,11 +26,9 @@ function signUp(data) {
     return res.json()
   })
   .then(function(res) {
-
     sessionStorage.setItem("username", res.user.username)
     window.location.href = '/'
-  })
-  .catch(function() {
+  }).catch(function() {
     alert("Invalid details, username or email possibly in use")
   })
 }
