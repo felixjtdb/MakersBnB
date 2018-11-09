@@ -69,6 +69,26 @@ app.post('/login_user', (req, res) => {
   })
 })
 
+app.get('/new/listing', (req, res) => {
+  res.render("new_listing", {})
+})
+
+app.post('/new/listing', (req, res) => {
+  console.log(req.body);
+  new Listing({
+    name: req.body.name,
+    location: req.body.location,
+    price: req.body.price,
+    bedrooms: req.body.bedrooms,
+    type: req.body.type,
+    description: req.body.description,
+    user_id: req.body.user_id
+  }).save()
+  .then(function (listing) {
+    res.json({listing})
+  })
+})
+
 app.listen(PORT, () => {
   console.log("server up")
 });

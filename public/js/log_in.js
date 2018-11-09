@@ -10,6 +10,7 @@ function logIn(data) {
   })
   .then(function (res) {
     sessionStorage.setItem("username", res.users[0].username )
+    sessionStorage.setItem("user_id", res.users[0].id)
     window.location.href = '/'
   }).catch(function() {
     alert("Incorrect username/password")

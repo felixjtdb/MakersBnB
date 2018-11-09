@@ -31,42 +31,55 @@
         </ul>
       </div>
     </nav>
-
     <div class="container">
     <br>
     <h3>Sign up to start Listing on MakersBnB</h3>
     <!-- <form class="sign-up" action="/signup" method="post"> -->
       <label for="name">
-        Name
+        Listing Name:
         <input type="text" id="name">
       </label>
       <br>
-      <label for="username">
-        Username
-        <input type="text" id="username">
+      <label for="location">
+        Location:
+        <input type="text" id="location">
       </label>
       <br>
-      <label for="emailaddress">
-        Email Address
-        <input type="text" id="email">
+      <label for="bedrooms">
+        Bedrooms:
+        <input type="text" id="bedrooms">
       </label>
       <br>
-      <label for="password">
-        Password
-        <input type="text" id="password">
+      <label for="price">
+        Price:
+        <input type="text" id="price">
       </label>
       <br>
-      <a id="sign-up" onclick="signUp({
+      <label for="type">
+        Type:
+        <input type="text" id="type">
+      </label>
+      <br>
+      <label for="description">
+        Description:
+        <input type="text" id="description">
+      </label>
+      <br>
+
+      <a id="new-listing" onclick="newListing({
         name: document.querySelector('#name').value,
-        username: document.querySelector('#username').value,
-        email: document.querySelector('#email').value,
-        password: document.querySelector('#password').value})">Sign Me Up</a>
+        location: document.querySelector('#location').value,
+        price: document.querySelector('#price').value,
+        bedrooms: document.querySelector('#bedrooms').value,
+        type: document.querySelector('#type').value,
+        description: document.querySelector('#description').value,
+        user_id: sessionStorage.getItem('user_id'})">List My Property!</a>
     </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src= "/js/log_in.js"></script>
-  </body>
-</html>
+    <script src= "/js/new_listing.js"></script>
+    </body>
+    </html>
