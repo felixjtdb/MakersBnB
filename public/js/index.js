@@ -1,4 +1,4 @@
-var el = document.getElementById('content')
+var el = document.getElementById('user')
 var content;
 var user = sessionStorage.getItem("username")
 
