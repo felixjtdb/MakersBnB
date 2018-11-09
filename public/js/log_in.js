@@ -9,7 +9,7 @@ function logIn(data) {
     return res.json()
   })
   .then(function (res) {
-    console.log(res)
+
     sessionStorage.setItem("username", res.users[0].username )
     window.location.href = '/'
   }).catch(function() {
@@ -31,6 +31,7 @@ function signUp(data) {
     return res.json()
   })
   .then(function(res) {
+    
     sessionStorage.setItem("username", res.user.username)
     window.location.href = '/'
   })

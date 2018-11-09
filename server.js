@@ -24,9 +24,7 @@ app.get('/signup', (req, res) => {
   res.render("sign_up", {});
 });
 
-// This route needs to be tested
 app.post('/signup', (req, res) => {
-  // bcrypt.hash(req.body.password, saltRound, function (err, hash) {
     new User({
       name: req.body.name,
       username: req.body.username,
@@ -35,7 +33,6 @@ app.post('/signup', (req, res) => {
     }).save()
     .then(function (user) {
       res.json({user})
-    // })
   });
 })
 
@@ -44,7 +41,6 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login_user', (req, res) => {
-  // bcrypt.hash(req.body.password, saltRound, function (err, hash) {
     User
       .where({
         'username': req.body.username,
@@ -53,7 +49,6 @@ app.post('/login_user', (req, res) => {
       .fetchAll()
       .then(function (users) {
         res.json({users})
-    // })
   })
 })
 
