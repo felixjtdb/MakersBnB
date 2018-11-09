@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 
 var User = require('./models/user')
+var Listing = require('./models/listing')
 
 const bcrypt = require('bcrypt');
 const saltRound = 10;
@@ -17,7 +18,10 @@ const saltRound = 10;
 app.set("view engine", "ejs");
 
 app.get('/', (req, res) => {
-  res.render("index", {});
+  Listing.fetchAll()
+  .then(function (results) {
+    res.render("index", {listings: results.toJSON()});
+  })
 });
 
 app.get('/signup', (req, res) => {

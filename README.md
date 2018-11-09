@@ -34,7 +34,7 @@ I would like to list my property.
 - OR run in command line: `open SpecRunner.html`
 
 ## Set Up Databases
-1.`npm install`
+1. `npm install`
 2. Install PostgreSQL
 3. Run `psql postgres`
 4. Run `CREATE DATABASE makers_bnb;`
