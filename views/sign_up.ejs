@@ -23,8 +23,7 @@
             <a class="nav-link" id="nav-link-login" href="/login">Log In</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="nav-link-logout" href="/">Log Out</a>
-            <script>sessionStorage.clear()</script>
+            <a class="nav-link" id="nav-link-logout" href="/" onclick="sessionStorage.clear()">Log Out</a>
           </li>
         </ul>
       </div>
@@ -33,34 +32,34 @@
     <div class="container">
     <br>
     <h3>Sign up to start Listing on MakersBnB</h3>
-    <form class="sign-up" action="/signup" method="post">
+    <!-- <form class="sign-up" action="/signup" method="post"> -->
       <label for="name">
         Name
-        <input type="text" name="name">
+        <input type="text" id="name">
       </label>
       <br>
       <label for="username">
         Username
-        <input type="text" name="username">
+        <input type="text" id="username">
       </label>
       <br>
       <label for="emailaddress">
         Email Address
-        <input type="text" name="email">
+        <input type="text" id="email">
       </label>
       <br>
       <label for="password">
         Password
-        <input type="text" name="password">
+        <input type="text" id="password">
       </label>
       <br>
-      <button class="sign-up-button" type="submit" name="Sign Up">Sign Me Up</button>
+      <a id="Sign Up" onclick="signUp({name: document.querySelector('#name').value, username: document.querySelector('#username').value, email: document.querySelector('#email').value, password: document.querySelector('#password').value})">Sign Me Up</button>
     </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+    <script src= "/js/log_in.js"></script>
   </body>
 </html>

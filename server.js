@@ -13,7 +13,7 @@ var User = require('./models/user')
 var Listing = require('./models/listing')
 
 const bcrypt = require('bcrypt');
-const saltRound = 10;
+const saltRound = 1;
 
 app.set("view engine", "ejs");
 
@@ -39,18 +39,15 @@ app.get('/signup', (req, res) => {
   res.render("sign_up", {});
 });
 
-// This route needs to be tested
 app.post('/signup', (req, res) => {
-  bcrypt.hash(req.body.password, saltRound, function (err, hash) {
     new User({
       name: req.body.name,
       username: req.body.username,
       email: req.body.email,
-      password: hash
+      password: req.body.password
     }).save()
     .then(function (user) {
       res.json({user})
-    })
   });
 })
 
@@ -59,14 +56,14 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login_user', (req, res) => {
-  User
-    .where({
-      'username': req.body.username,
-      'password': req.body.password
-    })
-    .fetchAll()
-    .then(function (users) {
-      res.json({users})
+    User
+      .where({
+        'username': req.body.username,
+        'password': req.body.password
+      })
+      .fetchAll()
+      .then(function (users) {
+        res.json({users})
   })
 })
 

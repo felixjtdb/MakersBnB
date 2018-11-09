@@ -34,16 +34,15 @@
 
       <label for="username">
         Username
-        <input type="text" id="username">
+        <input type="text" id="login_username">
       </label>
       <br>
       <label for="password">
         Password
-        <input type="password" id="password">
+        <input type="password" id="login_password">
       </label>
       <br>
-      <!-- <button type="button" id="login" onclick="logIn()">Login</button> -->
-      <a onclick='logIn()' id="login">Log In</a>
+      <a onclick="logIn({username: document.querySelector('#login_username').value, password: document.querySelector('#login_password').value})" id="login">Log In</a>
     </div>
 
     <script src= "/js/log_in.js"></script>
