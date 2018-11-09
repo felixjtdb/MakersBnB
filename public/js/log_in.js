@@ -17,10 +17,6 @@ function logIn(data) {
   })
 }
 
-function clearsession() {
-  sessionStorage.clear()
-}
-
 function signUp(data) {
   fetch('/signup', {
     method: 'POST',
@@ -31,7 +27,7 @@ function signUp(data) {
     return res.json()
   })
   .then(function(res) {
-    
+
     sessionStorage.setItem("username", res.user.username)
     window.location.href = '/'
   })
