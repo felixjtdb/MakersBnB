@@ -25,8 +25,15 @@ app.get('/', (req, res) => {
 });
 
 app.get('/listing/:listing_id', (req, res) => {
-  res.render("view_listing", {});
-})
+  Listing
+    .where({
+      'id': req.params.listing_id
+    })
+    .fetch()
+    .then(function (results) {
+      res.render("view_listing", {listing: results.toJSON()});
+    })
+});
 
 app.get('/signup', (req, res) => {
   res.render("sign_up", {});
