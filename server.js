@@ -24,6 +24,17 @@ app.get('/', (req, res) => {
   })
 });
 
+app.get('/listing/:listing_id', (req, res) => {
+  Listing
+    .where({
+      'id': req.params.listing_id
+    })
+    .fetch({ withRelated: ['users']})
+    .then(function (results) {
+      res.render("view_listing", {listing: results.toJSON()});
+    })
+});
+
 app.get('/signup', (req, res) => {
   res.render("sign_up", {});
 });
