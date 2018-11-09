@@ -35,10 +35,14 @@ describe('Signing up', function() {
     })
   });
 
-  // it('should throw an error if form filled incorrectly', function(next) {
-  //   browser.fill("#username", "not_a_user")
-  //   browser.fill("#password", "lol")
-  //   expect(browser.clickLink("#sign-up", function (res) {}).to.throw(Error))
-  //   next()
-  // })
+  it('should throw an error if form filled incorrectly', function(next) {
+  browser.fill("#name", "lol")
+  browser.fill("#username", "t_user")
+  browser.fill("#email", "lol")
+  browser.fill("#password", "lol")
+  browser.clickLink("#sign-up", function (res) {
+    expect(browser.redirected).toBe(false)
+    next()
+  })
+});
 });
