@@ -29,7 +29,7 @@ app.get('/listing/:listing_id', (req, res) => {
     .where({
       'id': req.params.listing_id
     })
-    .fetch()
+    .fetch({ withRelated: ['users']})
     .then(function (results) {
       res.render("view_listing", {listing: results.toJSON()});
     })

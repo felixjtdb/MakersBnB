@@ -27,6 +27,7 @@ describe('Viewing a listing', function() {
     expect(browser.text("ul")).toContain("1 bedrooms")
     expect(browser.text("ul")).toContain("Single Room")
     expect(browser.text("ul")).toContain("£99.99")
+    expect(browser.text("p")).toContain("For more information, contact test user at test@user.com")
     next()
   });
 

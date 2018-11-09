@@ -25,15 +25,30 @@
           <li class="nav-item">
             <a class="nav-link" id="nav-link-logout" href="/" onclick="sessionStorage.clear()">Log Out</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-link-add-listing" href="/new/listing">List a property</a>
+          </li>
         </ul>
       </div>
     </nav>
-<h1><%=listing.name%></h1>
 
-<p><%= listing.description %></p>
-<ul>
-  <li><%= listing.location %></li>
-  <li><%= listing.bedrooms %> bedrooms</li>
-  <li><%= listing.type %></li>
-  <li>£<%= listing.price %></li>
-</ul>
+    <div class="container">
+      <h1><%=listing.name%></h1>
+
+      <p><%= listing.description %></p>
+      <ul>
+        <li><%= listing.location %></li>
+        <li><%= listing.bedrooms %> bedrooms</li>
+        <li><%= listing.type %></li>
+        <li>£<%= listing.price %></li>
+      </ul>
+
+      <p>For more information, contact <%= listing.users.name %> at <%= listing.users.email %></p>
+
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
