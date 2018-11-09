@@ -24,6 +24,10 @@ app.get('/', (req, res) => {
   })
 });
 
+app.get('/listing/:listing_id', (req, res) => {
+  res.render("view_listing", {});
+})
+
 app.get('/signup', (req, res) => {
   res.render("sign_up", {});
 });
