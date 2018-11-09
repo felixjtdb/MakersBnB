@@ -1,7 +1,10 @@
 process.env.NODE_ENV = 'test'
 var Browser = require("zombie")
+var DB = require('../../db/db_helper')
+var clear = DB.clearUserTable()
 
 Browser.localhost("localhost", 8080)
+
 
 describe('Signing up', function() {
   var browser = new Browser();
