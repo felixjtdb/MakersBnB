@@ -18,16 +18,11 @@ const saltRound = 10;
 app.set("view engine", "ejs");
 
 app.get('/', (req, res) => {
-  res.render("index", {});
-});
-
-app.get('/listings', (req, res) => {
   Listing.fetchAll()
-  .then(function (listings) {
-    console.log(listings)
-    res.json({listings})
+  .then(function (results) {
+    res.render("index", {listings: results.toJSON()});
   })
-})
+});
 
 app.get('/signup', (req, res) => {
   res.render("sign_up", {});

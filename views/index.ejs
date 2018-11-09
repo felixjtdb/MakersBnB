@@ -32,6 +32,9 @@
   <div class="container">
     <br>
     <h3> Welcome to Makers BnB! </h3>
+
+
+
     <div id="content"></div>
     <script type="text/javascript">
       var el = document.getElementById('content')
@@ -47,11 +50,14 @@
     </script>
 
   </div>
-
-  <div >
-    <h5>Property Listings</h5>
-    <ul id="listingNames">
-    </ul>
+  <br>
+  <div class="container">
+    <h4>Property Listings</h4>
+    <% for(let i = 0; i < listings.length; i++) { %>
+        <article>
+            <h6><%= listings[i].name %></h6>
+        </article>
+    <% } %>
   </div>
 
 
