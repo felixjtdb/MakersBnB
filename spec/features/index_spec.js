@@ -1,3 +1,4 @@
+process.env.NODE_ENV = 'test'
 var Browser = require("zombie")
 
 Browser.localhost("localhost", 8080)
